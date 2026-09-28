@@ -46,7 +46,6 @@
             z-index: 1;
         }
 
-        /* Glass Circle - Light Background Version */
         .glass-circle {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(12px);
@@ -56,7 +55,6 @@
                         inset 0 0 15px rgba(255, 255, 255, 0.6);
         }
 
-        /* Glass Circle with Crimson Accent */
         .glass-circle-tinted {
             background: rgba(184, 37, 42, 0.08);
             backdrop-filter: blur(10px);
@@ -66,7 +64,6 @@
                         inset 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
-        /* Glass Circle for Dark/Crimson Background */
         .glass-circle-dark {
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(14px);
@@ -185,7 +182,7 @@
             line-height: 1.8;
         }
 
-        /* Editorial Article Section (Теперь красная для чередования цветов) */
+        /* Editorial Article Section */
         .editorial-section {
             background-color: var(--crimson);
             color: #FFFFFF;
@@ -448,7 +445,7 @@
             text-align: center;
         }
 
-        /* Video Wishes / Circular Stories Sections */
+        /* Video / Circular Stories Sections */
         .video-section {
             padding: 100px 5%;
             background-color: var(--bg-cream);
@@ -505,13 +502,7 @@
             align-items: center;
         }
 
-        .editorial-section .video-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #FFFFFF;
-        }
-
-        /* Circular Video Wrapper (Enlarged to 260px) */
+        /* Circular Video Wrapper */
         .video-wrapper-circle {
             width: 260px;
             height: 260px;
@@ -524,10 +515,6 @@
             border: 5px solid var(--crimson);
             cursor: pointer;
             transition: transform 0.3s ease;
-        }
-
-        .editorial-section .video-wrapper-circle {
-            border: 5px solid #FFFFFF;
         }
 
         .video-wrapper-circle:hover {
@@ -548,10 +535,6 @@
             color: var(--text-dark);
         }
 
-        .editorial-section .video-info h3 {
-            color: #FFFFFF;
-        }
-
         .video-info p {
             font-size: 11px;
             letter-spacing: 1.5px;
@@ -559,10 +542,6 @@
             color: var(--crimson);
             font-weight: 600;
             line-height: 1.4;
-        }
-
-        .editorial-section .video-info p {
-            color: rgba(255, 255, 255, 0.8);
         }
 
         /* Footer */
@@ -587,7 +566,7 @@
             letter-spacing: 4px;
         }
 
-        /* Modal Overlay for Compliment */
+        /* Modal Overlay */
         .modal {
             display: none;
             position: fixed;
@@ -630,6 +609,13 @@
             margin-bottom: 30px;
             font-style: italic;
         }
+
+        /* Mobile optimization: hide decor circles on small screens */
+        @media (max-width: 768px) {
+            .decor-circle {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -643,7 +629,6 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Glassmorphism Circles -->
         <div class="decor-circle glass-circle-tinted" style="width: 220px; height: 220px; top: -40px; right: 5%;"></div>
         <div class="decor-circle glass-circle" style="width: 140px; height: 140px; bottom: 20px; left: -50px;"></div>
         <div class="decor-circle glass-circle-tinted" style="width: 60px; height: 60px; top: 120px; left: 45%;"></div>
@@ -665,21 +650,20 @@
         </div>
     </section>
 
-    <!-- Editorial Dossier Section (Красная страница для чередования) -->
+    <!-- Editorial Dossier Section -->
     <section class="editorial-section">
-        <!-- Glassmorphism Circles -->
         <div class="decor-circle glass-circle-dark" style="width: 180px; height: 180px; top: 40px; left: 3%;"></div>
         <div class="decor-circle glass-circle-dark" style="width: 50px; height: 50px; bottom: 50px; right: 10%;"></div>
 
         <div class="editorial-container">
             <div>
                 <h2 class="editorial-headline">
-                    Где Эстетика <span>встречает</span> Контроль
+                    Где Эстетика <span>встречает</span> Харизму
                 </h2>
                 <div class="editorial-meta">
-                    <strong>РОЛЬ:</strong> Main character.<br>
-                    <strong>ПАРАМЕТРЫ:</strong> Zero tolerance for mediocre design.<br>
-                    <strong>ВЕРДИКТ:</strong> Без вариантов.
+                    <strong>ВОЗРАСТ:</strong> Официально 18 лет.<br>
+                    <strong>ХАРАКТЕР:</strong> Целеустремленная, искренняя, харизматичная.<br>
+                    <strong>СУПЕРСИЛА:</strong> Включает хорошее настроение у всех вокруг одним своим присутствием.
                 </div>
             </div>
 
@@ -699,7 +683,6 @@
 
     <!-- Quotes Section -->
     <section class="quotes-section">
-        <!-- Glassmorphism Circles -->
         <div class="decor-circle glass-circle-tinted" style="width: 160px; height: 160px; top: -30px; left: 12%;"></div>
         <div class="decor-circle glass-circle" style="width: 240px; height: 240px; bottom: -80px; right: -40px;"></div>
 
@@ -726,9 +709,8 @@
         </div>
     </section>
 
-    <!-- FIRST VIDEO BLOCK: Meme Wishes (Updated final subtitle: "просто по любви к тебе") -->
+    <!-- FIRST VIDEO BLOCK: Meme / Special Wishes -->
     <section class="video-section">
-        <!-- Glassmorphism Circles -->
         <div class="decor-circle glass-circle-tinted" style="width: 140px; height: 140px; top: 30px; right: 8%;"></div>
         <div class="decor-circle glass-circle" style="width: 220px; height: 220px; bottom: 20px; left: -60px;"></div>
 
@@ -738,12 +720,10 @@
         </div>
 
         <div class="video-grid">
-            <!-- Video 1 -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="oblowka.jpg">
                         <source src="video1.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -752,12 +732,10 @@
                 </div>
             </div>
 
-            <!-- Video 2 -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="oblowka.jpg">
                         <source src="video2.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -766,12 +744,10 @@
                 </div>
             </div>
 
-            <!-- Video 3 -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="oblowka.jpg">
                         <source src="video3.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -780,12 +756,10 @@
                 </div>
             </div>
 
-            <!-- Video 5 -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="oblowka.jpg">
                         <source src="video5.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -794,12 +768,10 @@
                 </div>
             </div>
 
-            <!-- Video 6 -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="oblowka.jpg">
                         <source src="video6.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -808,12 +780,10 @@
                 </div>
             </div>
 
-            <!-- Video 7 (Updated subtitle) -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="oblowka.jpg">
                         <source src="video7.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -824,9 +794,8 @@
         </div>
     </section>
 
-    <!-- Crimson High Contrast Section -->
+    <!-- Crimson High Contrast Section & Polaroids -->
     <section class="crimson-section">
-        <!-- Glassmorphism Circles for Dark/Crimson background -->
         <div class="decor-circle glass-circle-dark" style="width: 320px; height: 320px; top: -100px; right: -50px;"></div>
         <div class="decor-circle glass-circle-dark" style="width: 180px; height: 180px; bottom: -60px; left: 5%;"></div>
         <div class="decor-circle glass-circle-dark" style="width: 90px; height: 90px; top: 180px; left: 15%;"></div>
@@ -838,7 +807,6 @@
                 <span>Моменты, стиль, харизма</span>
             </h2>
 
-            <!-- Polaroid Photo Grid -->
             <div class="polaroid-grid">
                 <div class="polaroid-card">
                     <div class="polaroid-img-frame">
@@ -856,7 +824,7 @@
 
                 <div class="polaroid-card">
                     <div class="polaroid-img-frame">
-                        <img src="boss.jpg" alt="ты просто босс, ты просто начальник">
+                        <img src="boss.jpg" alt="ты просто босс">
                     </div>
                     <div class="polaroid-caption">ты просто босс, ты просто начальник</div>
                 </div>
@@ -871,9 +839,8 @@
         </div>
     </section>
 
-    <!-- SECOND VIDEO BLOCK: Real People Wishes (Includes Polina & Maria from "Полинах2Маша") -->
+    <!-- SECOND VIDEO BLOCK: Real People Wishes & Анна Александровна на 4 месте -->
     <section class="video-section-alt">
-        <!-- Glassmorphism Circles -->
         <div class="decor-circle glass-circle-tinted" style="width: 140px; height: 140px; top: 30px; right: 8%;"></div>
         <div class="decor-circle glass-circle" style="width: 220px; height: 220px; bottom: 20px; left: -60px;"></div>
 
@@ -883,40 +850,11 @@
         </div>
 
         <div class="video-grid">
-            <!-- Дарья Азатовна -->
-            <div class="video-card">
-                <div class="video-wrapper-circle">
-                    <video controls playsinline preload="metadata" poster="dog.jpg">
-                        <source src="dariaazatovna.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                </div>
-                <div class="video-info">
-                    <h3>Дарья Азатовна</h3>
-                    <p>классный руководитель 10-11 класс</p>
-                </div>
-            </div>
-
-            <!-- Дарья (одноклассница) -->
-            <div class="video-card">
-                <div class="video-wrapper-circle">
-                    <video controls playsinline preload="metadata" poster="dog.jpg">
-                        <source src="dasha.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                </div>
-                <div class="video-info">
-                    <h3>Дарья</h3>
-                    <p>одноклассница</p>
-                </div>
-            </div>
-
-            <!-- Родители -->
+            <!-- 1. Родители (теперь первые) -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="dog.jpg">
                         <source src="roditeli.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -925,12 +863,50 @@
                 </div>
             </div>
 
-            <!-- Полина, Наташа, Эвелина -->
+            <!-- 2. Дарья Азатовна -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="dariaazatovna.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Дарья Азатовна</h3>
+                    <p>классный руководитель 10-11 класс</p>
+                </div>
+            </div>
+
+            <!-- 3. Дарья (одноклассница) -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="dasha.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Дарья</h3>
+                    <p>одноклассница</p>
+                </div>
+            </div>
+
+            <!-- 4. Анна Александровна (теперь на 4 месте) -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="aa.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Анна Александровна</h3>
+                    <p>а как это</p>
+                </div>
+            </div>
+
+            <!-- 5. Полина, Наташа, Эвелина -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="dog.jpg">
                         <source src="students chelgu.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -939,12 +915,11 @@
                 </div>
             </div>
 
-            <!-- Кристина Каморникова -->
+            <!-- 6. Кристина Каморникова -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="dog.jpg">
                         <source src="kristinarfmornikova.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -953,12 +928,11 @@
                 </div>
             </div>
 
-            <!-- Вова (лучший тренер и наставник) -->
+            <!-- 7. Вова -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="dog.jpg">
                         <source src="vova.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -967,12 +941,11 @@
                 </div>
             </div>
 
-            <!-- Полина (сквад "Полинах2Маша") -->
+            <!-- 8. Полина (сквад) -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="dog.jpg">
                         <source src="polina.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -981,12 +954,11 @@
                 </div>
             </div>
 
-            <!-- Маша (сквад "Полинах2Маша") -->
+            <!-- 9. Маша (сквад) -->
             <div class="video-card">
                 <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="dog.jpg">
                         <source src="maria.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
                 <div class="video-info">
@@ -1023,7 +995,6 @@
             document.getElementById('complimentModal').style.display = 'none';
         }
 
-        // Close modal when clicking outside of text
         window.onclick = function(event) {
             const modal = document.getElementById('complimentModal');
             if (event.target === modal) {
@@ -1031,7 +1002,6 @@
             }
         }
 
-        // Reset video to poster when paused or ended
         document.addEventListener('DOMContentLoaded', () => {
             const videos = document.querySelectorAll('video');
             videos.forEach(video => {
