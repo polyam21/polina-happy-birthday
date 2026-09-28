@@ -434,7 +434,75 @@
             text-align: center;
         }
 
-        /* Video Wishes Grid Section */
+        /* NEW SECTION: Memories / Gallery Page */
+        .memories-section {
+            padding: 110px 5%;
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .memories-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        @media (min-width: 768px) {
+            .memories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .memory-card {
+            background: var(--bg-cream);
+            border: 1px solid var(--border-light);
+            padding: 25px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(184, 37, 42, 0.08);
+            border-color: var(--crimson);
+        }
+
+        .memory-number {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            color: var(--crimson);
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .memory-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .memory-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Video Wishes / Circular Stories Section */
         .video-section {
             padding: 100px 5%;
             background-color: var(--bg-cream);
@@ -459,40 +527,48 @@
         }
 
         .video-grid {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             position: relative;
             z-index: 2;
         }
 
-        @media (min-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
         .video-card {
             background-color: #FFFFFF;
             border: 1px solid var(--border-light);
-            padding: 20px;
+            padding: 35px 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             position: relative;
             z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .video-wrapper {
-            width: 100%;
-            aspect-ratio: 9/16;
+        /* Circular Video Wrapper (Instagram/Telegram Stories Style - Enlarged) */
+        .video-wrapper-circle {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
             background-color: #1a1a1a;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             overflow: hidden;
-            border-radius: 2px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(184, 37, 42, 0.25);
+            border: 4px solid var(--crimson);
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        .video-wrapper video {
+        .video-wrapper-circle:hover {
+            transform: scale(1.05);
+        }
+
+        .video-wrapper-circle video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -500,17 +576,19 @@
 
         .video-info h3 {
             font-family: var(--font-serif);
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            color: var(--text-dark);
         }
 
         .video-info p {
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--crimson);
             font-weight: 600;
+            line-height: 1.4;
         }
 
         /* Footer */
@@ -674,6 +752,40 @@
         </div>
     </section>
 
+    <!-- NEW PAGE / SECTION: Memories & Chapters -->
+    <section class="memories-section">
+        <!-- Glassmorphism Circles -->
+        <div class="decor-circle glass-circle-tinted" style="width: 200px; height: 200px; top: 20px; right: -50px;"></div>
+        <div class="decor-circle glass-circle" style="width: 150px; height: 150px; bottom: 30px; left: 10%;"></div>
+
+        <div class="memories-container">
+            <div class="section-header">
+                <span class="hero-tag">ГЛАВНЫЕ ГРАНИ ИСТОРИИ</span>
+                <h2>Календарь ярких моментов</h2>
+            </div>
+
+            <div class="memories-grid">
+                <div class="memory-card">
+                    <div class="memory-number">01</div>
+                    <div class="memory-title">Стиль и Эстетика</div>
+                    <div class="memory-text">Безупречный вкус во всем: от повседневных образов до ярких выходов. Полина задает планку и вдохновляет своим видением прекрасного.</div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-number">02</div>
+                    <div class="memory-title">Интеллект и Успех</div>
+                    <div class="memory-text">Широкий кругозор, острый ум и легкость в решении любых задач. Настоящий лидер, который уверенно идет к своим целям.</div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-number">03</div>
+                    <div class="memory-title">Тепло и Душевность</div>
+                    <div class="memory-text">Человек, с которым всегда уютно, весело и надежно. Умение поддержать, рассмешить и окружить заботой тех, кто рядом.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Crimson High Contrast Section -->
     <section class="crimson-section">
         <!-- Glassmorphism Circles for Dark/Crimson background -->
@@ -721,7 +833,7 @@
         </div>
     </section>
 
-    <!-- Video Wishes Section -->
+    <!-- Video Wishes Section (Circular Stories Style) -->
     <section class="video-section">
         <!-- Glassmorphism Circles -->
         <div class="decor-circle glass-circle-tinted" style="width: 140px; height: 140px; top: 30px; right: 8%;"></div>
@@ -733,9 +845,79 @@
         </div>
 
         <div class="video-grid">
-            <!-- Vova Video -->
+            <!-- Дарья Азатовна -->
             <div class="video-card">
-                <div class="video-wrapper">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="dariaazatovna.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Дарья Азатовна</h3>
+                    <p>классный руководитель 10-11 класс</p>
+                </div>
+            </div>
+
+            <!-- Дарья (одноклассница) -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="dasha.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Дарья</h3>
+                    <p>одноклассница</p>
+                </div>
+            </div>
+
+            <!-- Родители -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="roditeli.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Родители</h3>
+                    <p>самые близкие люди на свете</p>
+                </div>
+            </div>
+
+            <!-- Полина, Наташа, Эвелина -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="students chelgu.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Полина, Наташа, Эвелина</h3>
+                    <p>студенты ЧелГу</p>
+                </div>
+            </div>
+
+            <!-- Кристина Каморникова -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="kristinarfmornikova.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Кристина Каморникова</h3>
+                    <p>подруга с лагеря</p>
+                </div>
+            </div>
+
+            <!-- Вова (лучший тренер и наставник) -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
                     <video controls playsinline preload="metadata" poster="dog.jpg">
                         <source src="vova.mp4" type="video/mp4">
                         Ваш браузер не поддерживает видео.
@@ -743,21 +925,7 @@
                 </div>
                 <div class="video-info">
                     <h3>Вова</h3>
-                    <p>Самый лучший тренер и наставник</p>
-                </div>
-            </div>
-
-            <!-- Dasha Video -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <video controls playsinline preload="metadata" poster="dog.jpg">
-                        <source src="dasha.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                </div>
-                <div class="video-info">
-                    <h3>Даша</h3>
-                    <p>Одноклассница</p>
+                    <p>лучший тренер и наставник</p>
                 </div>
             </div>
         </div>
@@ -796,6 +964,21 @@
                 modal.style.display = "none";
             }
         }
+
+        // Reset video to poster (dog.jpg) when paused or ended
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.addEventListener('pause', () => {
+                    video.currentTime = 0;
+                    video.load();
+                });
+                video.addEventListener('ended', () => {
+                    video.currentTime = 0;
+                    video.load();
+                });
+            });
+        });
     </script>
 </body>
 </html>
