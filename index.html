@@ -185,14 +185,35 @@
             line-height: 1.8;
         }
 
-        /* Editorial Article Section */
+        /* Editorial Article Section (Теперь красная для чередования цветов) */
         .editorial-section {
-            background-color: var(--bg-cream);
+            background-color: var(--crimson);
+            color: #FFFFFF;
             padding: 90px 5%;
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             z-index: 2;
+        }
+
+        .editorial-section .editorial-headline {
+            color: #FFFFFF;
+        }
+
+        .editorial-section .editorial-headline span {
+            color: #FFFFFF;
+            opacity: 0.85;
+        }
+
+        .editorial-section .editorial-body {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .editorial-section .editorial-meta {
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 3px solid #FFFFFF;
+            color: #FFFFFF;
+            backdrop-filter: blur(10px);
         }
 
         .editorial-container {
@@ -216,21 +237,13 @@
             font-family: var(--font-serif);
             font-size: clamp(36px, 4vw, 56px);
             line-height: 1.05;
-            color: var(--text-dark);
             margin-bottom: 30px;
             font-weight: 500;
-        }
-
-        .editorial-headline span {
-            font-family: var(--font-serif);
-            font-style: italic;
-            color: var(--crimson);
         }
 
         .editorial-body {
             font-size: 16px;
             line-height: 1.85;
-            color: #333333;
             font-weight: 300;
         }
 
@@ -240,12 +253,9 @@
 
         .editorial-meta {
             padding: 25px;
-            background: #EDE8DF;
-            border-left: 3px solid var(--crimson);
             margin-top: 30px;
             font-size: 13px;
             letter-spacing: 0.5px;
-            color: var(--text-dark);
             position: relative;
             z-index: 2;
         }
@@ -269,10 +279,14 @@
             z-index: 2;
         }
 
+        .editorial-section .btn-editorial {
+            background-color: #FFFFFF;
+            color: var(--crimson);
+        }
+
         .btn-editorial:hover {
-            background-color: var(--crimson-dark);
+            opacity: 0.9;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(184, 37, 42, 0.3);
         }
 
         /* High Contrast Crimson Banner Section */
@@ -434,78 +448,20 @@
             text-align: center;
         }
 
-        /* NEW SECTION: Memories / Gallery Page */
-        .memories-section {
-            padding: 110px 5%;
-            background-color: var(--bg-white);
-            border-bottom: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
-            z-index: 2;
-        }
-
-        .memories-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .memories-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        @media (min-width: 768px) {
-            .memories-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .memory-card {
-            background: var(--bg-cream);
-            border: 1px solid var(--border-light);
-            padding: 25px;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-        }
-
-        .memory-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(184, 37, 42, 0.08);
-            border-color: var(--crimson);
-        }
-
-        .memory-number {
-            font-family: var(--font-serif);
-            font-size: 36px;
-            color: var(--crimson);
-            font-weight: 500;
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-
-        .memory-title {
-            font-family: var(--font-serif);
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .memory-text {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* Video Wishes / Circular Stories Section */
+        /* Video Wishes / Circular Stories Sections */
         .video-section {
             padding: 100px 5%;
             background-color: var(--bg-cream);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .video-section-alt {
+            padding: 100px 5%;
+            background-color: var(--bg-white);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
             position: relative;
             z-index: 2;
             overflow: hidden;
@@ -530,7 +486,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             position: relative;
             z-index: 2;
@@ -539,7 +495,7 @@
         .video-card {
             background-color: #FFFFFF;
             border: 1px solid var(--border-light);
-            padding: 35px 20px;
+            padding: 40px 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             position: relative;
             z-index: 2;
@@ -549,19 +505,29 @@
             align-items: center;
         }
 
-        /* Circular Video Wrapper (Instagram/Telegram Stories Style - Enlarged) */
+        .editorial-section .video-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+        }
+
+        /* Circular Video Wrapper (Enlarged to 260px) */
         .video-wrapper-circle {
-            width: 220px;
-            height: 220px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             background-color: #1a1a1a;
             margin-bottom: 25px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 10px 30px rgba(184, 37, 42, 0.25);
-            border: 4px solid var(--crimson);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+            border: 5px solid var(--crimson);
             cursor: pointer;
             transition: transform 0.3s ease;
+        }
+
+        .editorial-section .video-wrapper-circle {
+            border: 5px solid #FFFFFF;
         }
 
         .video-wrapper-circle:hover {
@@ -576,10 +542,14 @@
 
         .video-info h3 {
             font-family: var(--font-serif);
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 600;
             margin-bottom: 8px;
             color: var(--text-dark);
+        }
+
+        .editorial-section .video-info h3 {
+            color: #FFFFFF;
         }
 
         .video-info p {
@@ -589,6 +559,10 @@
             color: var(--crimson);
             font-weight: 600;
             line-height: 1.4;
+        }
+
+        .editorial-section .video-info p {
+            color: rgba(255, 255, 255, 0.8);
         }
 
         /* Footer */
@@ -691,33 +665,33 @@
         </div>
     </section>
 
-    <!-- Editorial Dossier Section -->
+    <!-- Editorial Dossier Section (Красная страница для чередования) -->
     <section class="editorial-section">
         <!-- Glassmorphism Circles -->
-        <div class="decor-circle glass-circle" style="width: 180px; height: 180px; top: 40px; left: 3%;"></div>
-        <div class="decor-circle glass-circle-tinted" style="width: 50px; height: 50px; bottom: 50px; right: 10%;"></div>
+        <div class="decor-circle glass-circle-dark" style="width: 180px; height: 180px; top: 40px; left: 3%;"></div>
+        <div class="decor-circle glass-circle-dark" style="width: 50px; height: 50px; bottom: 50px; right: 10%;"></div>
 
         <div class="editorial-container">
             <div>
                 <h2 class="editorial-headline">
-                    Где Эстетика <span>встречает</span> Харизму
+                    Где Эстетика <span>встречает</span> Контроль
                 </h2>
                 <div class="editorial-meta">
-                    <strong>ВОЗРАСТ:</strong> Официально 18 лет.<br>
-                    <strong>ХАРАКТЕР:</strong> Целеустремленная, искренняя, харизматичная.<br>
-                    <strong>СУПЕРСИЛА:</strong> Включает хорошее настроение у всех вокруг одной улыбкой.
+                    <strong>РОЛЬ:</strong> Main character.<br>
+                    <strong>ПАРАМЕТРЫ:</strong> Zero tolerance for mediocre design.<br>
+                    <strong>ВЕРДИКТ:</strong> Без вариантов.
                 </div>
             </div>
 
             <div class="editorial-body">
                 <p>
-                    Полина — это редкий микс безупречного чувства стиля, нежности и несокрушимого характера. Если она берется за дело, результат всегда будет на высоте: её проницательность и гибкий ум позволяют легко справляться с любыми задачами.
+                    Понимание формы, структуры и баланса. Никаких случайных деталей — всё выстроено так, как должно быть.
                 </p>
                 <p>
-                    Она сочетает в себе невероятную красоту, такт и абсолютную справедливость, оставаясь при этом самой заботливой и преданной подругой. Но её главное оружие — неподражаемый юмор и способность создавать атмосферу, в которой всем становится тепло и весело.
+                    Холодный расчет сочетается с абсолютным пониманием того, как заставить пространство работать по твоим правилам. 
                 </p>
                 <p>
-                    Полина — это про уверенность, легкость и умение идти по жизни с гордо поднятой головой. Редакция официально заявляет: этот год принадлежит тебе!
+                    Стандартные схемы здесь не работают. Этот уровень создан исключительно под тебя.
                 </p>
             </div>
         </div>
@@ -752,35 +726,99 @@
         </div>
     </section>
 
-    <!-- NEW PAGE / SECTION: Memories & Chapters -->
-    <section class="memories-section">
+    <!-- FIRST VIDEO BLOCK: Meme Wishes (Updated final subtitle: "просто по любви к тебе") -->
+    <section class="video-section">
         <!-- Glassmorphism Circles -->
-        <div class="decor-circle glass-circle-tinted" style="width: 200px; height: 200px; top: 20px; right: -50px;"></div>
-        <div class="decor-circle glass-circle" style="width: 150px; height: 150px; bottom: 30px; left: 10%;"></div>
+        <div class="decor-circle glass-circle-tinted" style="width: 140px; height: 140px; top: 30px; right: 8%;"></div>
+        <div class="decor-circle glass-circle" style="width: 220px; height: 220px; bottom: 20px; left: -60px;"></div>
 
-        <div class="memories-container">
-            <div class="section-header">
-                <span class="hero-tag">ГЛАВНЫЕ ГРАНИ ИСТОРИИ</span>
-                <h2>Календарь ярких моментов</h2>
+        <div class="section-header">
+            <span class="hero-tag">СПЕЦИАЛЬНЫЕ ВКЛЮЧЕНИЯ</span>
+            <h2>Поздравления от тех, кого тебе сейчас не хватает</h2>
+        </div>
+
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="oblowka.jpg">
+                        <source src="video1.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Специальный гость №1</h3>
+                    <p>VIP-персона</p>
+                </div>
             </div>
 
-            <div class="memories-grid">
-                <div class="memory-card">
-                    <div class="memory-number">01</div>
-                    <div class="memory-title">Стиль и Эстетика</div>
-                    <div class="memory-text">Безупречный вкус во всем: от повседневных образов до ярких выходов. Полина задает планку и вдохновляет своим видением прекрасного.</div>
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="oblowka.jpg">
+                        <source src="video2.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
                 </div>
-
-                <div class="memory-card">
-                    <div class="memory-number">02</div>
-                    <div class="memory-title">Интеллект и Успех</div>
-                    <div class="memory-text">Широкий кругозор, острый ум и легкость в решении любых задач. Настоящий лидер, который уверенно идет к своим целям.</div>
+                <div class="video-info">
+                    <h3>Специальный гость №2</h3>
+                    <p>VIP-персона</p>
                 </div>
+            </div>
 
-                <div class="memory-card">
-                    <div class="memory-number">03</div>
-                    <div class="memory-title">Тепло и Душевность</div>
-                    <div class="memory-text">Человек, с которым всегда уютно, весело и надежно. Умение поддержать, рассмешить и окружить заботой тех, кто рядом.</div>
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="oblowka.jpg">
+                        <source src="video3.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Специальный гость №3</h3>
+                    <p>VIP-персона</p>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="oblowka.jpg">
+                        <source src="video5.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Специальный гость №5</h3>
+                    <p>VIP-персона</p>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="oblowka.jpg">
+                        <source src="video6.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Специальный гость №6</h3>
+                    <p>VIP-персона</p>
+                </div>
+            </div>
+
+            <!-- Video 7 (Updated subtitle) -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="oblowka.jpg">
+                        <source src="video7.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Эксклюзивный финал</h3>
+                    <p>просто по любви к тебе</p>
                 </div>
             </div>
         </div>
@@ -833,15 +871,15 @@
         </div>
     </section>
 
-    <!-- Video Wishes Section (Circular Stories Style) -->
-    <section class="video-section">
+    <!-- SECOND VIDEO BLOCK: Real People Wishes (Includes Polina & Maria from "Полинах2Маша") -->
+    <section class="video-section-alt">
         <!-- Glassmorphism Circles -->
         <div class="decor-circle glass-circle-tinted" style="width: 140px; height: 140px; top: 30px; right: 8%;"></div>
         <div class="decor-circle glass-circle" style="width: 220px; height: 220px; bottom: 20px; left: -60px;"></div>
 
         <div class="section-header">
             <span class="hero-tag">ПОЗДРАВЛЕНИЯ БЛИЗКИХ</span>
-            <h2>Слова от тех, кто рядом</h2>
+            <h2>А это и вправду они, те кто тебя любят и готовы на все ради тебя</h2>
         </div>
 
         <div class="video-grid">
@@ -928,6 +966,34 @@
                     <p>лучший тренер и наставник</p>
                 </div>
             </div>
+
+            <!-- Полина (сквад "Полинах2Маша") -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="polina.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Полина</h3>
+                    <p>сквад "Полинах2Маша"</p>
+                </div>
+            </div>
+
+            <!-- Маша (сквад "Полинах2Маша") -->
+            <div class="video-card">
+                <div class="video-wrapper-circle">
+                    <video controls playsinline preload="metadata" poster="dog.jpg">
+                        <source src="maria.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Маша</h3>
+                    <p>сквад "Полинах2Маша"</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -965,7 +1031,7 @@
             }
         }
 
-        // Reset video to poster (dog.jpg) when paused or ended
+        // Reset video to poster when paused or ended
         document.addEventListener('DOMContentLoaded', () => {
             const videos = document.querySelectorAll('video');
             videos.forEach(video => {
